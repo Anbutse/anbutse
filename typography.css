@@ -1,0 +1,104 @@
+/* ====================== FONTS ====================== */
+@font-face {
+  font-family: 'Vela Sans';
+  src: url('../fonts/VelaSans-Regular.woff2') format('woff2'),
+       url('../fonts/VelaSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vela Sans';
+  src: url('../fonts/VelaSans-Medium.woff2') format('woff2'),
+       url('../fonts/VelaSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vela Sans';
+  src: url('../fonts/VelaSans-SemiBold.woff2') format('woff2'),
+       url('../fonts/VelaSans-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ====================== TYPOGRAPHY ====================== */
+
+/* TitleSemiBold — 54px (desktop), line-height 1 */
+.title-semi-bold {
+  font-family: 'Vela Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(32px, 6vw, 54px); /* адаптивный размер */
+  line-height: 1;
+  color: #161618;
+}
+
+/* SemiBold — 36px, line-height 1.2 */
+.semi-bold {
+  font-family: 'Vela Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 5vw, 36px);
+  line-height: 1.2;
+  color: #161618;
+}
+
+/* Headline Medium — 24px, line-height 1.2 */
+.headline-medium {
+  font-family: 'Vela Sans', sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 4vw, 24px);
+  line-height: 1.2;
+  color: #161618;
+}
+
+/* PreHeadline Medium — 18px, line-height 1.4 */
+.preheadline-medium {
+  font-family: 'Vela Sans', sans-serif;
+  font-weight: 500;
+  font-size: clamp(14px, 3.5vw, 18px);
+  line-height: 1.4;
+  color: #161618;
+}
+
+/* Text Regular — 14px, line-height 1.4 */
+.text-regular {
+  font-family: 'Vela Sans', sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 2.5vw, 14px);
+  line-height: 1.4;
+  color: #161618;
+}
+
+/* RegularText for Buttons — 12px, line-height 1.4 */
+.text-button {
+  font-family: 'Vela Sans', sans-serif;
+  font-weight: 400;
+  font-size: clamp(10px, 2vw, 12px);
+  line-height: 1.4;
+  color: #fff;
+  text-transform: uppercase; /* если нужно для кнопок */
+}
+
+/* Text Caption — 10px, line-height 1.4 */
+.text-caption {
+  font-family: 'Vela Sans', sans-serif;
+  font-weight: 400;
+  font-size: clamp(8px, 1.5vw, 10px);
+  line-height: 1.4;
+  color: #555555;
+}
+
+.logo-text {
+  font-family: 'Vela Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #161618;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
