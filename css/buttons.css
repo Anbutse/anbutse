@@ -23,13 +23,12 @@
      margin: 0;
      border: none;
      border-radius: 8px;
-     background: none;
+     background: transparent;
      white-space: nowrap;
      box-shadow: none;
      cursor: pointer;
      overflow: hidden;
      background-color: transparent;
-     z-index: 1;
      transition: background-color 0.2s ease;
 }
 .hamburger::after {
@@ -64,4 +63,9 @@
  .button-white {
      display: none;
  }
+ .menu-panel .button-white {
+     display: inline-flex;
+     width: 100%;
+     justify-content: flex-start;
+}
 }
