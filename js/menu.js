@@ -1,35 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
-  const nav = document.querySelector('.top-bar-center');
-  const projectBtn = document.querySelector('.button-white');
+  const overlay = document.querySelector('.menu-overlay');
 
-  let mobileBtnClone = null; // переменная для клона
+  if (!hamburger || !overlay) return;
+
+const openMenu = () => {
+  overlay.classList.add('active');
+  document.body.classList.add('menu-open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  hamburger.textContent = 'Закрыть';
+};
+
+const closeMenu = () => {
+  overlay.classList.remove('active');
+  document.body.classList.remove('menu-open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.textContent = 'Меню';
+};
 
   hamburger.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('active'); 
-    hamburger.setAttribute('aria-expanded', isOpen);
-    hamburger.textContent = isOpen ? 'Закрыть' : 'Меню';
+    const isOpen = overlay.classList.contains('active');
+    isOpen ? closeMenu() : openMenu();
+  });
 
-    // создаём клон только если экран <=768 и клон ещё не существует
-    if (window.innerWidth <= 768 && isOpen && !mobileBtnClone) {
-      mobileBtnClone = projectBtn.cloneNode(true);
-      mobileBtnClone.style.display = 'inline-flex';
-      nav.appendChild(mobileBtnClone);
+  /* закрытие при клике по ссылкам */
+  overlay.querySelectorAll('.nav-link, .button-white').forEach(el => {
+    el.addEventListener('click', closeMenu);
+  });
 
-      mobileBtnClone.addEventListener('click', () => {
-        nav.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', false);
-        hamburger.textContent = 'Меню';
-      });
+  /* закрытие по клику на фон */
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) {
+      closeMenu();
     }
   });
 
-  // Закрытие меню при клике на ссылки
-  nav.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', false);
-      hamburger.textContent = 'Меню';
-    });
+  /* закрытие по Esc */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
   });
 });
