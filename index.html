@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дизайн, разработка сайтов, фирменный стиль</title>
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/typography.css">
     <link rel="stylesheet" href="css/topbar.css">
+    <link rel="stylesheet" href="css/buttons.css">
 </head>
 <body>
     <header class="top-bar">
@@ -20,18 +20,21 @@
              </svg>
              <span class="logo-text">Анбуце Владислав</span>
          </div>
-         <button class="hamburger" aria-label="Menu" aria-expanded="false">Меню</button>
-         <nav class="top-bar-center">
-             <a href="#about" class="nav-link">Обо мне</a>
-             <a href="#projects" class="nav-link">Проекты</a>
-             <a href="#services" class="nav-link">Услуги</a>
-             <a href="#contact" class="nav-link">Контакты</a>
-             <a href="#glossary" class="nav-link">Глоссарий</a>
-         </nav>
+         <div class="top-bar-center">
+             <nav>
+                 <a href="#about" class="nav-link text-button">Обо мне</a>
+                 <a href="#projects" class="nav-link text-button">Проекты</a>
+                 <a href="#services" class="nav-link text-button">Услуги</a>
+                 <a href="#contact" class="nav-link text-button">Контакты</a>
+                 <a href="#glossary" class="nav-link text-button">Глоссарий</a>
+             </nav>
+         </div>
          <div class="top-bar-right">
-             <button class="btn-primary">Обсудить проект</button>
+             <button class="hamburger text-button" aria-label="Menu" aria-expanded="false">Меню</button>
+             <button class="button-white text-button">Обсудить проект</button>
          </div>
      </div>
  </header>
  <script src="js/menu.js"></script>
 </body>
+</html>
