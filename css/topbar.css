@@ -1,3 +1,7 @@
+/* =========================
+   TOP BAR (DESKTOP + BASE)
+========================= */
+
 .top-bar {
     position: fixed;
     top: 0;
@@ -7,143 +11,177 @@
     background-color: #FFFDF5;
     z-index: 999;
 }
+
 .top-bar .container {
-    width: auto;
     height: 100%;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    margin: auto;
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 .top-bar-left {
     display: flex;
-    flex: 1;
-    justify-content: space-between;
     align-items: center;
     gap: 8px;
 }
+
 .top-bar-left svg {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
 }
+
 .top-bar-center {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-.nav-link {
-  position: relative;
-  text-decoration: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  white-space: nowrap;
-  background: none;
-  z-index: 1;
-  overflow: hidden;
-  transition: color 0.2s ease;
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 8px;
-  background-color: transparent;
-  z-index: -1;
-  transition: background-color 0.2s ease;
-}
-.nav-link:hover::after {
-  background-color: #F2F0E9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width: 1024px) {
-  .container {
-    width: 100%;
-    gap: auto;
-  }
-  
-    .top-bar-center {
-    gap: auto;
-  }
-
-  .logo-text {
-    font-size: 14px;
-  }
-
-  .btn-primary {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
+.top-bar-center nav {
+    display: flex;
+    gap: 8px;
 }
 
-@media (max-width: 768px) {
-  .top-bar.container {
+.top-bar-right {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: auto;
-  }
-  .hamburger::after {
+    gap: 8px;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-link {
+    position: relative;
+    padding: 6px 12px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    background: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.2s ease;
+}
+
+.nav-link::after {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: 8px;
     background-color: transparent;
     z-index: -1;
-    width: 100%;             /* обрамляет только текст + padding */
     transition: background-color 0.2s ease;
-  }
-  .hamburger:hover::after,
-  .hamburger[aria-expanded="true"]::after {
-    background-color: #F2F0E9;
-  }
+}
 
-  .top-bar-center {
+.nav-link:hover::after {
+    background-color: #F2F0E9;
+}
+
+/* =========================
+   MOBILE OVERLAY MENU
+========================= */
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.menu-overlay {
     position: fixed;
-    top: 0;
-    right: -100%;          /* полностью за экраном справа */
-    width: 100%;           /* ширина панели */
-    height: 100vh;         /* вся высота экрана */
+    inset: 0;
+    background: rgba(255, 253, 245, 0.6);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 998;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* =========================
+   MENU PANEL (CARD)
+========================= */
+
+.menu-panel {
+    max-width: 100%;
+    margin: 20px auto 0 auto;  /* отступ сверху только */
     background-color: #FFFDF5;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 64px 20px 20px 20px; /* учёт top-bar */
-    box-sizing: border-box;
-    border-left: 1px solid #E6E3DA;
-    z-index: 100;
-    transition: right 0.4s ease;
-  }
-  .top-bar-center.active {
-    right: 0;              /* видна панель */
-  }
-  .top-bar-center nav {
+    border-radius: 16px;
+    padding: 20px;              /* равные отступы со всех сторон */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+    transform: scale(0.96);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-overlay.active .menu-panel {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.menu-panel nav {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 12px;
-  }
- 
-    .top-bar-center nav {
-    align-items: flex-start;
-  }
+}
 
-  .nav-link {
-    width: auto;
+/* ссылки внутри панели */
+.menu-panel .nav-link {
+    width: 100%;
     padding: 6px 12px;
-  }
+    box-sizing: border-box;
+}
 
-  .nav-link::after {
-    inset: 0;
-  }
+/* =========================
+   MENU CONTENT (LINKS + BUTTON)
+========================= */
 
- .top-bar-right {
+.menu-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* кнопка "Обсудить проект" внутри меню */
+.menu-content .button-white {
+    display: block;
+    width: 100%;
+    text-align: left;        /* выравнивание текста по левому краю */
+    padding: 6px 12px;      /* одинаковые отступы слева и справа */
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.menu-content .button-white:hover {
+    background-color: #F2F0E9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+    .logo-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* скрываем десктопную навигацию */
+    .top-bar-center {
+        display: none;
     }
 }
