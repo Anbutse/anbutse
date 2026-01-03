@@ -1,0 +1,67 @@
+.button-white {
+     display: inline-flex;
+     width: auto;
+     height: auto;
+     padding: 6px 12px;
+     margin: 0;
+     border: none;
+     border-radius: 8px;
+     box-shadow: none;
+     cursor: pointer;
+     background-color: transparent;
+     transition: background-color 0.2s ease;
+}
+.button-white:hover {
+     background-color: #F2F0E9;
+}
+.hamburger {
+     position: relative;
+     display: none;
+     width: auto;
+     height: auto;
+     padding: 6px 12px;
+     margin: 0;
+     border: none;
+     border-radius: 8px;
+     background: none;
+     white-space: nowrap;
+     box-shadow: none;
+     cursor: pointer;
+     overflow: hidden;
+     background-color: transparent;
+     z-index: 1;
+     transition: background-color 0.2s ease;
+}
+.hamburger::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background-color: transparent;
+  z-index: -1;
+  transition: background-color 0.2s ease;
+}
+.hamburger:hover::after {
+  background-color: #F2F0E9;
+}
+.hamburger[aria-expanded="true"]::after {
+  background-color: #F2F0E9;
+}
+
+@media (max-width: 768px) {
+ .hamburger {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     padding: 6px 12px;       /* как у nav-link */
+     margin-left: auto;        /* отступ от логотипа */
+     width: auto;              /* ширина по содержимому */
+     white-space: nowrap;
+     z-index: 101;
+     cursor: pointer;
+ }
+ .button-white {
+     display: none;
+ }
+}
