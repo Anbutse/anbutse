@@ -5,14 +5,14 @@
      padding: 6px 12px;
      margin: 0;
      border: none;
-     border-radius: 8px;
+     border-radius: 12px;
      box-shadow: none;
      cursor: pointer;
      background-color: transparent;
      transition: background-color 0.2s ease;
 }
 .button-white:hover {
-     background-color: #F2F0E9;
+     background-color: #F2F2F2;
 }
 .hamburger {
      position: relative;
@@ -22,7 +22,7 @@
      padding: 6px 12px;
      margin: 0;
      border: none;
-     border-radius: 8px;
+     border-radius: 12px;
      background: transparent;
      white-space: nowrap;
      box-shadow: none;
@@ -35,16 +35,16 @@
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: transparent;
   z-index: -1;
   transition: background-color 0.2s ease;
 }
 .hamburger:hover::after {
-  background-color: #F2F0E9;
+  background-color: #F2F2F2;
 }
 .hamburger[aria-expanded="true"]::after {
-  background-color: #F2F0E9;
+  background-color: #F2F2F2;
 }
 
 @media (max-width: 768px) {
