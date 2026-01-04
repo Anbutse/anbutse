@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дизайн, разработка сайтов, фирменный стиль</title>
+
     <link rel="stylesheet" href="css/typography.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/topbar.css">
     <link rel="stylesheet" href="css/hero.css">
 </head>
 <body>
+    <!-- TOPBAR -->
     <header class="top-bar">
         <div class="container">
             <div class="top-bar-left">
@@ -21,82 +23,141 @@
                 </svg>
                 <span class="logo-text">Анбуце Владислав</span>
             </div>
+
+            <!-- DESKTOP NAV -->
             <nav class="top-bar-center" aria-label="Основная навигация">
-                <a href="#about" class="nav-link text-button">Обо мне</a>
-                <a href="#projects" class="nav-link text-button">Проекты</a>
-                <a href="#services" class="nav-link text-button">Услуги</a>
-                <a href="#contact" class="nav-link text-button">Контакты</a>
-                <a href="#glossary" class="nav-link text-button">Глоссарий</a>
+                <div class="nav-page">
+                    <a href="index.html" class="nav-link text-button">Главная</a>
+                    <div class="nav-submenu">
+                        <a href="#about" class="nav-link text-button">Обо мне</a>
+                        <a href="#projects" class="nav-link text-button">Проекты</a>
+                        <a href="#services" class="nav-link text-button">Услуги</a>
+                        <a href="#contact" class="nav-link text-button">Контакты</a>
+                    </div>
+                </div>
+                <div class="nav-page">
+                    <a href="glossary.html" class="nav-link text-button">Глоссарий</a>
+                    <div class="nav-submenu">
+                        <a href="#glossary-1" class="nav-link text-button">Термины 1</a>
+                        <a href="#glossary-2" class="nav-link text-button">Термины 2</a>
+                    </div>
+                </div>
+                <div class="nav-page">
+                    <a href="manager.html" class="nav-link text-button">Менеджер</a>
+                    <div class="nav-submenu">
+                        <a href="#experience" class="nav-link text-button">Опыт работы</a>
+                        <a href="#projects" class="nav-link text-button">Проекты</a>
+                        <a href="#tools" class="nav-link text-button">Инструменты</a>
+                    </div>
+                </div>
+                <div class="nav-page">
+                    <a href="documents.html" class="nav-link text-button">Документы</a>
+                    <div class="nav-submenu">
+                        <a href="#terms" class="nav-link text-button">Пользовательское соглашение</a>
+                        <a href="#contract" class="nav-link text-button">Договор оферта</a>
+                        <a href="#privacy" class="nav-link text-button">Конфиденциальность</a>
+                    </div>
+                </div>
             </nav>
+
+            <!-- RIGHT SIDE -->
             <div class="top-bar-right">
-                <button class="hamburger text-button"
-                        aria-label="Открыть меню"
-                        aria-expanded="false">
-                    Меню
-                </button>
-                <button class="button-white text-button">
-                    Обсудить проект
-                </button>
+                <button class="hamburger text-button" aria-label="Открыть меню" aria-expanded="false">Меню</button>
+                <button class="button-white text-button">Обсудить проект</button>
             </div>
         </div>
     </header>
+
+    <!-- MOBILE MENU -->
     <aside class="menu-overlay" aria-hidden="true">
         <div class="menu-panel">
             <nav class="menu-content" aria-label="Мобильная навигация">
-                <a href="#about" class="nav-link text-button">Обо мне</a>
-                <a href="#projects" class="nav-link text-button">Проекты</a>
-                <a href="#services" class="nav-link text-button">Услуги</a>
-                <a href="#contact" class="nav-link text-button">Контакты</a>
-                <a href="#glossary" class="nav-link text-button">Глоссарий</a>
-                <button class="button-white text-button">
-                    Обсудить проект
-                </button>
+                <!-- Страница Главная -->
+                <div class="nav-page">
+                    <a href="index.html" class="nav-link text-button">
+                        Главная
+                        <span class="toggle-icon">∨</span>
+                    </a>
+                    <div class="nav-submenu">
+                        <a href="#about" class="nav-link text-button">Обо мне</a>
+                        <a href="#projects" class="nav-link text-button">Проекты</a>
+                        <a href="#services" class="nav-link text-button">Услуги</a>
+                        <a href="#contact" class="nav-link text-button">Контакты</a>
+                    </div>
+                </div>
+
+                <!-- Страница Глоссарий -->
+                <div class="nav-page">
+                    <a href="glossary.html" class="nav-link text-button">
+                        Глоссарий
+                        <span class="toggle-icon">∨</span>
+                    </a>
+                    <div class="nav-submenu">
+                        <a href="#glossary-1" class="nav-link text-button">Термины 1</a>
+                        <a href="#glossary-2" class="nav-link text-button">Термины 2</a>
+                    </div>
+                </div>
+
+                <!-- Страница Менеджер -->
+                <div class="nav-page">
+                    <a href="manager.html" class="nav-link text-button">
+                        Менеджер
+                        <span class="toggle-icon">∨</span>
+                    </a>
+                    <div class="nav-submenu">
+                        <a href="#experience" class="nav-link text-button">Опыт работы</a>
+                        <a href="#projects" class="nav-link text-button">Проекты</a>
+                        <a href="#tools" class="nav-link text-button">Инструменты</a>
+                    </div>
+                </div>
+
+                <!-- Страница Документы -->
+                <div class="nav-page">
+                    <a href="documents.html" class="nav-link text-button">
+                        Документы
+                        <span class="toggle-icon">∨</span>
+                    </a>
+                    <div class="nav-submenu">
+                        <a href="#terms" class="nav-link text-button">Пользовательское соглашение</a>
+                        <a href="#contract" class="nav-link text-button">Договор оферта</a>
+                        <a href="#privacy" class="nav-link text-button">Конфиденциальность</a>
+                    </div>
+                </div>
+
+                <!-- BUTTON -->
+                <button class="button-white text-button">Обсудить проект</button>
             </nav>
         </div>
     </aside>
+
+    <!-- MAIN CONTENT -->
     <main>
         <section class="hero" aria-labelledby="hero-title">
             <video id="hero-video" autoplay muted loop playsinline>
-            <source src="images/video-3d.mp4" type="video/mp4">
+                <source src="images/video-3d.mp4" type="video/mp4">
             </video>
             <div class="hero-glass"></div>
             <div class="hero-image">
-                <img src="images/my-photo.png"
-                     alt="Владислав Анбуце">
+                <img src="images/my-photo.png" alt="Владислав Анбуце">
             </div>
             <h1 id="hero-title" class="semi-bold">
                 Графический и веб-дизайн<br>
                 для&nbsp;экспертов и&nbsp;бизнеса
             </h1>
             <div class="hero-socials">
-                <a href="https://www.instagram.com/vlad_anbutse/"
-                   target="_blank"
-                   rel="noopener"
-                   class="social-link text-regular">
-                    Instagram*
-                </a>
-                <a href="https://www.behance.net/anbutse"
-                   target="_blank"
-                   rel="noopener"
-                   class="social-link text-regular">
-                    Behance
-                </a>
-                <a href="https://t.me/vlad_anbutse"
-                   target="_blank"
-                   rel="noopener"
-                   class="social-link text-regular">
-                    Telegram
-                </a>
+                <a href="https://www.instagram.com/vlad_anbutse/" target="_blank" rel="noopener" class="social-link text-regular">Instagram*</a>
+                <a href="https://www.behance.net/anbutse" target="_blank" rel="noopener" class="social-link text-regular">Behance</a>
+                <a href="https://t.me/vlad_anbutse" target="_blank" rel="noopener" class="social-link text-regular">Telegram</a>
             </div>
         </section>
+
         <section id="about"></section>
         <section id="projects"></section>
         <section id="services"></section>
         <section id="contact"></section>
         <section id="glossary"></section>
-
     </main>
+
     <script src="js/menu.js"></script>
 </body>
 </html>
-
