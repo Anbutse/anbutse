@@ -1,7 +1,3 @@
-/* =========================
-   TOP BAR (DESKTOP + BASE)
-========================= */
-
 .top-bar {
     position: fixed;
     top: 0;
@@ -11,7 +7,6 @@
     background-color: #FFFDF5;
     z-index: 999;
 }
-
 .top-bar .container {
     height: 100%;
     display: grid;
@@ -20,39 +15,30 @@
     padding: 0 20px;
     box-sizing: border-box;
 }
-
 .top-bar-left {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-
 .top-bar-left svg {
     width: 28px;
     height: 28px;
     flex-shrink: 0;
 }
-
 .top-bar-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .top-bar-center nav {
     display: flex;
     gap: 8px;
 }
-
 .top-bar-right {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-
-/* =========================
-   NAV LINKS
-========================= */
 
 .nav-link {
     position: relative;
@@ -65,7 +51,6 @@
     overflow: hidden;
     transition: color 0.2s ease;
 }
-
 .nav-link::after {
     content: '';
     position: absolute;
@@ -75,19 +60,14 @@
     z-index: -1;
     transition: background-color 0.2s ease;
 }
-
 .nav-link:hover::after {
     background-color: #F2F0E9;
 }
 
-/* =========================
-   MOBILE OVERLAY MENU
-========================= */
-
+/*MOBILE MENU STYLES*/
 body.menu-open {
     overflow: hidden;
 }
-
 .menu-overlay {
     position: fixed;
     top: 64px;
@@ -101,33 +81,25 @@ body.menu-open {
     transition: opacity 0.25s ease;
     z-index: 998;
 }
-
 .menu-overlay.active {
     opacity: 1;
     pointer-events: auto;
 }
-
-/* =========================
-   MENU PANEL (CARD)
-========================= */
-
 .menu-panel {
     max-width: 100%;
     margin: 0 auto 0 auto;
     background-color: #FFFDF5;
     border-radius: 16px;
-    padding: 0 20px 20px 20px;              /* равные отступы со всех сторон */
+    padding: 0 20px 20px 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     transform: scale(0.96);
     opacity: 0;
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
-
 .menu-overlay.active .menu-panel {
     transform: scale(1);
     opacity: 1;
 }
-
 .menu-panel nav {
     margin: 0;
     padding: 0;
@@ -135,17 +107,11 @@ body.menu-open {
     flex-direction: column;
     gap: 0px;
 }
-
-/* ссылки внутри панели */
 .menu-panel .nav-link {
     width: 100%;
     padding: 12px 24px;
     box-sizing: border-box;
 }
-
-/* =========================
-   MENU CONTENT (LINKS + BUTTON)
-========================= */
 
 .menu-content {
     display: flex;
@@ -156,12 +122,11 @@ body.menu-open {
     gap: 0px;
 }
 
-/* кнопка "Обсудить проект" внутри меню */
 .menu-content .button-white {
     display: block;
     width: 100%;
-    text-align: left;        /* выравнивание текста по левому краю */
-    padding: 12px 24px;      /* одинаковые отступы слева и справа */
+    text-align: left;
+    padding: 12px 24px;
     box-sizing: border-box;
     background-color: transparent;
     border: none;
@@ -179,7 +144,6 @@ body.menu-open {
     }
 }
 @media (max-width: 768px) {
-    /* скрываем десктопную навигацию */
     .top-bar-center {
         display: none;
     }
