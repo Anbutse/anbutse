@@ -1,17 +1,17 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #FFFDF5;
+    background-color: #FFFFFF;
 }
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* экран полностью */
+    min-height: 100vh;
     padding: 20px 20px 0;
     text-align: center;
-    background-color: #FFFDF5; /* можно заменить на фон по вкусу */
+    background-color: #FFFFFF; /* можно заменить на фон по вкусу */
     box-sizing: border-box;
 }
 .hero-image img {
@@ -53,7 +53,7 @@ html, body {
     }
 
     .hero-image img {
-        width: 150px;
+        width: 200px;
     }
 
     .hero-socials {
