@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     height: 64px;
-    background-color: #FFFDF5;
+    background-color: #FFFFFF;
     z-index: 999;
 }
 .top-bar .container {
@@ -61,7 +61,7 @@
     transition: background-color 0.2s ease;
 }
 .nav-link:hover::after {
-    background-color: #F2F0E9;
+    background-color: #F2F2F2;
 }
 
 /*MOBILE MENU STYLES*/
@@ -88,7 +88,7 @@ body.menu-open {
 .menu-panel {
     max-width: 100%;
     margin: 0 auto 0 auto;
-    background-color: #FFFDF5;
+    background-color: #FFFFFF;
     border-radius: 16px;
     padding: 0 20px 20px 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
@@ -117,7 +117,7 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     padding: 0px 20px 20px 20px;
-    background-color: #FAF8F0;
+    background-color: #FAFAFA;
     border-radius: 12px;
     gap: 0px;
 }
@@ -135,7 +135,7 @@ body.menu-open {
     transition: background-color 0.2s ease;
 }
 .menu-content .button-white:hover {
-    background-color: #F2F0E9;
+    background-color: #F2F2F2;
 }
 
 @media (max-width: 1024px) {
