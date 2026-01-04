@@ -116,7 +116,7 @@ body.menu-open {
     margin: 0 auto 0 auto;
     background-color: #FFFDF5;
     border-radius: 16px;
-    padding: 20px;              /* равные отступы со всех сторон */
+    padding: 0 20px 20px 20px;              /* равные отступы со всех сторон */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     transform: scale(0.96);
     opacity: 0;
