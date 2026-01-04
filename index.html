@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дизайн, разработка сайтов, фирменный стиль</title>
+
     <link rel="stylesheet" href="css/typography.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/topbar.css">
@@ -13,7 +14,7 @@
     <header class="top-bar">
         <div class="container">
             <div class="top-bar-left">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
                     <rect width="28" height="28" rx="8" fill="#141414"/>
                     <path d="M15.3125 14.875L19.25 16.8437V18.5937L14.6949 16.3162L12.6875 21H10.9375L13.2708 15.5556L15.3125 14.875Z" fill="#7A7D80"/>
                     <path d="M13.2708 15.5556L15.3125 14.875L14.6949 16.3162L12.6875 21H10.9375L13.2708 15.5556Z" fill="#FFFDFA"/>
@@ -21,49 +22,78 @@
                 </svg>
                 <span class="logo-text">Анбуце Владислав</span>
             </div>
-            <div class="top-bar-center">
-                <nav>
-                    <a href="#about" class="nav-link text-button">Обо мне</a>
-                    <a href="#projects" class="nav-link text-button">Проекты</a>
-                    <a href="#services" class="nav-link text-button">Услуги</a>
-                    <a href="#contact" class="nav-link text-button">Контакты</a>
-                    <a href="#glossary" class="nav-link text-button">Глоссарий</a>
-                </nav>
-            </div>
-            <div class="top-bar-right">
-                <button class="hamburger text-button" aria-label="Menu" aria-expanded="false">Меню</button>
-                <button class="button-white text-button">Обсудить проект</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- MOBILE MENU OVERLAY -->
-    <div class="menu-overlay">
-        <div class="menu-panel">
-            <div class="menu-content">
+            <nav class="top-bar-center" aria-label="Основная навигация">
                 <a href="#about" class="nav-link text-button">Обо мне</a>
                 <a href="#projects" class="nav-link text-button">Проекты</a>
                 <a href="#services" class="nav-link text-button">Услуги</a>
                 <a href="#contact" class="nav-link text-button">Контакты</a>
                 <a href="#glossary" class="nav-link text-button">Глоссарий</a>
-                <button class="button-white text-button">Обсудить проект</button>
+            </nav>
+            <div class="top-bar-right">
+                <button class="hamburger text-button"
+                        aria-label="Открыть меню"
+                        aria-expanded="false">
+                    Меню
+                </button>
+                <button class="button-white text-button">
+                    Обсудить проект
+                </button>
             </div>
         </div>
-    </div>
+    </header>
+    <aside class="menu-overlay" aria-hidden="true">
+        <div class="menu-panel">
+            <nav class="menu-content" aria-label="Мобильная навигация">
+                <a href="#about" class="nav-link text-button">Обо мне</a>
+                <a href="#projects" class="nav-link text-button">Проекты</a>
+                <a href="#services" class="nav-link text-button">Услуги</a>
+                <a href="#contact" class="nav-link text-button">Контакты</a>
+                <a href="#glossary" class="nav-link text-button">Глоссарий</a>
 
-    <!-- HERO SECTION -->
-    <main class="hero">
-        <div class="hero-image">
-            <img src="images/my-photo.png" alt="Владислав Анбуце">
+                <button class="button-white text-button">
+                    Обсудить проект
+                </button>
+            </nav>
         </div>
-        <h1 class="semi-bold">Графический и веб-дизайн<br>для экспертов и бизнеса</h1>
-        <div class="hero-socials">
-            <a href="https://www.instagram.com" target="_blank" class="social-link text-regular">Instagram</a>
-            <a href="https://www.behance.net" target="_blank" class="social-link text-regular">Behance</a>
-            <a href="https://www.linkedin.com" target="_blank" class="social-link text-regular">LinkedIn</a>
-        </div>
+    </aside>
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-image">
+                <img src="images/my-photo.png"
+                     alt="Владислав Анбуце">
+            </div>
+            <h1 id="hero-title" class="semi-bold">
+                Графический и веб-дизайн<br>
+                для&nbsp;экспертов и&nbsp;бизнеса
+            </h1>
+            <div class="hero-socials">
+                <a href="https://www.instagram.com/vlad_anbutse/"
+                   target="_blank"
+                   rel="noopener"
+                   class="social-link text-regular">
+                    Instagram*
+                </a>
+                <a href="https://www.behance.net/anbutse"
+                   target="_blank"
+                   rel="noopener"
+                   class="social-link text-regular">
+                    Behance
+                </a>
+                <a href="https://t.me/vlad_anbutse"
+                   target="_blank"
+                   rel="noopener"
+                   class="social-link text-regular">
+                    Telegram
+                </a>
+            </div>
+        </section>
+        <section id="about"></section>
+        <section id="projects"></section>
+        <section id="services"></section>
+        <section id="contact"></section>
+        <section id="glossary"></section>
+
     </main>
-
     <script src="js/menu.js"></script>
 </body>
 </html>
