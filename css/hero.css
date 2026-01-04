@@ -21,20 +21,23 @@ html, body {
     overflow: hidden;                /* обрезает WebGL по форме hero */
 }
 
-/* Контейнер для Three.js */
-#hero-canvas {
+/* Видео на фоне */
+#hero-video {
     position: absolute;
-    inset: 0;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    width: auto;
     height: 100%;
-    z-index: 1;
-    pointer-events: none;            /* фон не перехватывает клики */
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* Все элементы hero поверх 3D */
-.hero > *:not(#hero-canvas):not(.hero-glass) {
+.hero > *:not(#hero-video):not(.hero-glass) {
     position: relative;
-    z-index: 3;
+    z-index: 2;
 }
 
 /* IMAGE */
@@ -82,7 +85,7 @@ html, body {
     background: rgba(255, 255, 255, 0);  /* прозрачность */
     backdrop-filter: blur(3px);           /* размытие */
     -webkit-backdrop-filter: blur(3px);
-    z-index: 2;                 /* ниже текста и фото, выше canvas */
+    z-index: 1;                 /* ниже текста и фото, выше canvas */
     pointer-events: none;       /* клики проходят сквозь слой */
 }
 
