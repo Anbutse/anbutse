@@ -70,7 +70,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 8px;
+    border-radius: 12px;
     background-color: transparent;
     z-index: -1;
     transition: background-color 0.2s ease;
@@ -90,7 +90,10 @@ body.menu-open {
 
 .menu-overlay {
     position: fixed;
-    inset: 0;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(255, 253, 245, 0.6);
     backdrop-filter: blur(12px);
     opacity: 0;
@@ -110,12 +113,11 @@ body.menu-open {
 
 .menu-panel {
     max-width: 100%;
-    margin: 20px auto 0 auto;  /* отступ сверху только */
+    margin: 0 auto 0 auto;
     background-color: #FFFDF5;
     border-radius: 16px;
     padding: 20px;              /* равные отступы со всех сторон */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-
     transform: scale(0.96);
     opacity: 0;
     transition: transform 0.25s ease, opacity 0.25s ease;
@@ -131,13 +133,13 @@ body.menu-open {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0px;
 }
 
 /* ссылки внутри панели */
 .menu-panel .nav-link {
     width: 100%;
-    padding: 6px 12px;
+    padding: 12px 24px;
     box-sizing: border-box;
 }
 
@@ -148,7 +150,10 @@ body.menu-open {
 .menu-content {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    padding: 0px 20px 20px 20px;
+    background-color: #FAF8F0;
+    border-radius: 12px;
+    gap: 0px;
 }
 
 /* кнопка "Обсудить проект" внутри меню */
@@ -156,29 +161,23 @@ body.menu-open {
     display: block;
     width: 100%;
     text-align: left;        /* выравнивание текста по левому краю */
-    padding: 6px 12px;      /* одинаковые отступы слева и справа */
+    padding: 12px 24px;      /* одинаковые отступы слева и справа */
     box-sizing: border-box;
     background-color: transparent;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
-
 .menu-content .button-white:hover {
     background-color: #F2F0E9;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1024px) {
     .logo-text {
         font-size: 14px;
     }
 }
-
 @media (max-width: 768px) {
     /* скрываем десктопную навигацию */
     .top-bar-center {
