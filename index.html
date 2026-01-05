@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дизайн, разработка сайтов, фирменный стиль</title>
-
     <link rel="stylesheet" href="css/typography.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/topbar.css">
     <link rel="stylesheet" href="css/hero.css">
 </head>
 <body>
-    <!-- TOPBAR -->
     <header class="top-bar">
         <div class="container">
-            <div class="top-bar-left">
+            <a href="index.html" class="top-bar-left" aria-label="На главную страницу">
                 <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
                     <rect width="28" height="28" rx="8" fill="#141414"/>
                     <path d="M15.3125 14.875L19.25 16.8437V18.5937L14.6949 16.3162L12.6875 21H10.9375L13.2708 15.5556L15.3125 14.875Z" fill="#7A7D80"/>
@@ -22,41 +20,31 @@
                     <path d="M8.75 7H7L10.5 15.1667L19.25 12.25V21H21V9.91667L11.375 13.125L8.75 7Z" fill="#FFFDFA"/>
                 </svg>
                 <span class="logo-text">Анбуце Владислав</span>
-            </div>
-
-            <!-- DESKTOP NAV -->
+            </a>
             <nav class="top-bar-center" aria-label="Основная навигация">
                 <div class="nav-page">
-                    <a href="index.html" class="nav-link text-button">Главная</a>
+                    <a href="index.html" class="nav-link text-button">Дизайн</a>
                     <div class="nav-submenu">
                         <a href="#about" class="nav-link text-button">Обо мне</a>
                         <a href="#projects" class="nav-link text-button">Проекты</a>
                         <a href="#services" class="nav-link text-button">Услуги</a>
+                        <a href="#stages" class="nav-link text-button">Этапы работы</a>
                         <a href="#contact" class="nav-link text-button">Контакты</a>
                     </div>
                 </div>
                 <div class="nav-page">
-                    <a href="glossary.html" class="nav-link text-button">Глоссарий</a>
+                    <a href="manager.html" class="nav-link text-button">Менеджмент</a>
                     <div class="nav-submenu">
-                        <a href="#glossary-1" class="nav-link text-button">Термины 1</a>
-                        <a href="#glossary-2" class="nav-link text-button">Термины 2</a>
-                    </div>
-                </div>
-                <div class="nav-page">
-                    <a href="manager.html" class="nav-link text-button">Менеджер</a>
-                    <div class="nav-submenu">
-                        <a href="#experience" class="nav-link text-button">Опыт работы</a>
+                        <a href="#education" class="nav-link text-button">Образование</a>
                         <a href="#projects" class="nav-link text-button">Проекты</a>
                         <a href="#tools" class="nav-link text-button">Инструменты</a>
                     </div>
                 </div>
                 <div class="nav-page">
                     <a href="documents.html" class="nav-link text-button">Документы</a>
-                    <div class="nav-submenu">
-                        <a href="#terms" class="nav-link text-button">Пользовательское соглашение</a>
-                        <a href="#contract" class="nav-link text-button">Договор оферта</a>
-                        <a href="#privacy" class="nav-link text-button">Конфиденциальность</a>
-                    </div>
+                </div>
+                <div class="nav-page">
+                    <a href="glossary.html" class="nav-link text-button">Глоссарий</a>
                 </div>
             </nav>
 
@@ -72,40 +60,33 @@
     <aside class="menu-overlay" aria-hidden="true">
         <div class="menu-panel">
             <nav class="menu-content" aria-label="Мобильная навигация">
-                <!-- Страница Главная -->
-                <div class="nav-page">
-                    <a href="index.html" class="nav-link text-button">
-                        Главная
-                        <span class="toggle-icon">∨</span>
-                    </a>
+                <!-- Страница Дизайн -->
+                <div class="nav-page" data-has-submenu>
+                    <div class="nav-page-header">
+                        <a href="index.html" class="nav-link text-button">Дизайн</a>
+                        <button class="toggle-icon" type="button" aria-label="Показать разделы">
+                            <img src="svg/arrow-down-black.svg" alt="" />
+                        </button>
+                    </div>
                     <div class="nav-submenu">
                         <a href="#about" class="nav-link text-button">Обо мне</a>
                         <a href="#projects" class="nav-link text-button">Проекты</a>
                         <a href="#services" class="nav-link text-button">Услуги</a>
+                        <a href="#stages" class="nav-link text-button">Этапы работы</a>
                         <a href="#contact" class="nav-link text-button">Контакты</a>
                     </div>
                 </div>
 
-                <!-- Страница Глоссарий -->
-                <div class="nav-page">
-                    <a href="glossary.html" class="nav-link text-button">
-                        Глоссарий
-                        <span class="toggle-icon">∨</span>
-                    </a>
-                    <div class="nav-submenu">
-                        <a href="#glossary-1" class="nav-link text-button">Термины 1</a>
-                        <a href="#glossary-2" class="nav-link text-button">Термины 2</a>
+                <!-- Страница Менеджмент -->
+                <div class="nav-page" data-has-submenu>
+                    <div class="nav-page-header">
+                        <a href="manager.html" class="nav-link text-button">Менеджмент</a>
+                        <button class="toggle-icon" type="button" aria-label="Показать разделы">
+                            <img src="svg/arrow-down-black.svg" alt="" />
+                        </button>
                     </div>
-                </div>
-
-                <!-- Страница Менеджер -->
-                <div class="nav-page">
-                    <a href="manager.html" class="nav-link text-button">
-                        Менеджер
-                        <span class="toggle-icon">∨</span>
-                    </a>
                     <div class="nav-submenu">
-                        <a href="#experience" class="nav-link text-button">Опыт работы</a>
+                        <a href="#education" class="nav-link text-button">Образование</a>
                         <a href="#projects" class="nav-link text-button">Проекты</a>
                         <a href="#tools" class="nav-link text-button">Инструменты</a>
                     </div>
@@ -113,14 +94,17 @@
 
                 <!-- Страница Документы -->
                 <div class="nav-page">
-                    <a href="documents.html" class="nav-link text-button">
-                        Документы
-                        <span class="toggle-icon">∨</span>
-                    </a>
-                    <div class="nav-submenu">
-                        <a href="#terms" class="nav-link text-button">Пользовательское соглашение</a>
-                        <a href="#contract" class="nav-link text-button">Договор оферта</a>
-                        <a href="#privacy" class="nav-link text-button">Конфиденциальность</a>
+                    <div class="nav-page-header">
+                        <a href="documents.html" class="nav-link text-button">Документы</a>
+                        <button class="toggle-icon" type="button" aria-label="Нет разделов"></button>
+                    </div>
+                </div>
+
+                <!-- Страница Глоссарий -->
+                <div class="nav-page">
+                    <div class="nav-page-header">
+                        <a href="glossary.html" class="nav-link text-button">Глоссарий</a>
+                        <button class="toggle-icon" type="button" aria-label="Нет разделов"></button>
                     </div>
                 </div>
 
