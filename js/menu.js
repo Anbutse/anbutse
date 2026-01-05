@@ -10,29 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.setAttribute('aria-expanded', 'true');
         hamburger.textContent = 'Закрыть';
     };
-
     const closeMenu = () => {
         overlay.classList.remove('active');
         document.body.classList.remove('menu-open');
         hamburger.setAttribute('aria-expanded', 'false');
         hamburger.textContent = 'Меню';
     };
-
     hamburger.addEventListener('click', () => {
         overlay.classList.contains('active') ? closeMenu() : openMenu();
     });
-
-    /* закрытие по кнопке */
     overlay.querySelectorAll('.button-white').forEach(btn => {
         btn.addEventListener('click', closeMenu);
     });
-
-    /* ESC */
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeMenu();
     });
-
-    /* mobile submenu */
     overlay.querySelectorAll('.nav-page[data-has-submenu]').forEach(page => {
         const toggle = page.querySelector('.toggle-icon');
 
