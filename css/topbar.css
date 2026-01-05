@@ -72,12 +72,13 @@
 .nav-page .nav-submenu {
     display: none;
     position: absolute;
+    margin-top: 6px;
     top: 100%;
     left: 0;
     background: #FFFFFF;
     box-shadow: 0 8px 16px rgba(0,0,0,0.08);
     border-radius: 12px;
-    padding: 8px 0;
+    padding: 0 0;
     min-width: 160px;
     flex-direction: column;
     gap: 0;
@@ -108,10 +109,7 @@ body.menu-open {
 
 .menu-overlay {
     position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(12px);
     opacity: 0;
@@ -127,7 +125,7 @@ body.menu-open {
 
 .menu-panel {
     max-width: 100%;
-    margin: 0 auto;
+    margin-top: 64px;
     background-color: #FFFFFF;
     padding: 0 20px 20px 20px;
     border-radius: 0 0 16px 16px;
