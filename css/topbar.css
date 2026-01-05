@@ -1,11 +1,20 @@
 /* =========================
-   TOPBAR DESKTOP
-   ========================= */
+   RESET / BASE
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* =========================
+   TOP BAR (DESKTOP)
+========================= */
+
 .top-bar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    inset: 0 0 auto 0;
     height: 64px;
     background-color: #FFFFFF;
     z-index: 999;
@@ -17,13 +26,14 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     padding: 0 20px;
-    box-sizing: border-box;
 }
 
 .top-bar-left {
     display: flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .top-bar-left svg {
@@ -32,6 +42,10 @@
     flex-shrink: 0;
 }
 
+/* =========================
+   DESKTOP NAV
+========================= */
+
 .top-bar-center {
     display: flex;
     justify-content: center;
@@ -39,61 +53,91 @@
     gap: 16px;
 }
 
-.nav-page {
+.top-bar-center .nav-page {
     position: relative;
-}
-
-.nav-page .nav-link {
-    padding: 6px 12px;
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    background: none;
-    position: relative;
-    z-index: 1;
-    transition: color 0.2s ease;
-}
-
-.nav-page .nav-link::after {
-    content: '';
-    position: absolute;
-    inset: 0;
+    display: flex;
+    align-items: center;
     border-radius: 12px;
-    background-color: transparent;
-    z-index: -1;
-    transition: background-color 0.2s ease;
 }
 
-.nav-page .nav-link:hover::after {
+/* clickable title */
+
+.top-bar-center .nav-page > .nav-link {
+    padding: 6px 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+    position: relative;
+}
+
+.top-bar-center .nav-page > .nav-link:hover {
     background-color: #F2F2F2;
 }
 
-/* DESKTOP HOVER SUBMENU */
-.nav-page .nav-submenu {
-    display: none;
+/* =========================
+   DESKTOP DROPDOWN (FIXED)
+========================= */
+
+.top-bar-center .nav-submenu {
     position: absolute;
-    margin-top: 6px;
-    top: 100%;
+    top: calc(100% + 8px);
     left: 0;
+    min-width: 200px;
+
     background: #FFFFFF;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
     border-radius: 12px;
-    padding: 0 0;
-    min-width: 160px;
-    flex-direction: column;
-    gap: 0;
-    z-index: 10;
-}
+    padding: 12px;
 
-.nav-page:hover .nav-submenu {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+
     display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0s linear 0.2s;
 }
 
-.nav-page .nav-submenu .nav-link {
+/* invisible hover bridge */
+
+.top-bar-center .nav-page::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 14px;
+}
+
+/* show submenu */
+
+.top-bar-center .nav-page:hover > .nav-submenu,
+.top-bar-center .nav-submenu:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition-delay: 0s;
+}
+
+/* submenu links */
+
+.top-bar-center .nav-submenu .nav-link {
     padding: 8px 16px;
+    border-radius: 8px;
 }
 
-/* RIGHT SIDE */
+.top-bar-center .nav-submenu .nav-link:hover {
+    background-color: #F2F2F2;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
 .top-bar-right {
     display: flex;
     align-items: center;
@@ -101,8 +145,9 @@
 }
 
 /* =========================
-   MOBILE MENU
-   ========================= */
+   MOBILE MENU OVERLAY
+========================= */
+
 body.menu-open {
     overflow: hidden;
 }
@@ -110,7 +155,7 @@ body.menu-open {
 .menu-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255,255,255,0.6);
     backdrop-filter: blur(12px);
     opacity: 0;
     pointer-events: none;
@@ -124,12 +169,11 @@ body.menu-open {
 }
 
 .menu-panel {
-    max-width: 100%;
     margin-top: 64px;
-    background-color: #FFFFFF;
-    padding: 0 20px 20px 20px;
-    border-radius: 0 0 16px 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    background: #FFFFFF;
+    padding: 0 20px 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
     transform: scale(0.96);
     opacity: 0;
     transition: transform 0.25s ease, opacity 0.25s ease;
@@ -140,69 +184,123 @@ body.menu-open {
     opacity: 1;
 }
 
+/* =========================
+   MOBILE NAV CONTENT
+========================= */
+
 .menu-content {
     display: flex;
     flex-direction: column;
-    padding: 0px 0px 0px 0px;
-    background-color: #FAFAFA;
-    border-radius: 12px;
-    gap: 0;
+    gap: 6px;
+    padding: 24px;
+    background: #FAFAFA;
+    border-radius: 16px;
 }
 
-/* MOBILE NAV LINKS */
+/* =========================
+   MOBILE NAV PAGE
+========================= */
+
 .menu-content .nav-page {
     display: flex;
     flex-direction: column;
 }
 
-.menu-content .nav-page .nav-link {
+/* header */
+
+.menu-content .nav-page-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 12px 24px;
-    cursor: pointer;
-    background: transparent;
+    width: 100%;
+    height: 36px;
     border-radius: 12px;
-    transition: background-color 0.2s ease;
 }
 
-.menu-content .nav-page .nav-link:hover {
+/* title */
+
+.menu-content .nav-page-header .nav-link {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 12px 0 24px;
+    border-radius: 12px;
+}
+
+.menu-content .nav-page-header .nav-link:hover {
     background-color: #F2F2F2;
 }
 
-.menu-content .nav-page .toggle-icon {
-    margin-left: 8px;
-    font-weight: bold;
+/* toggle */
+
+.menu-content .nav-page[data-has-submenu] .toggle-icon {
+    width: 36px;
+    height: 36px;
+    margin-left: 6px;
+    background: transparent;
+    border-color: transparent;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
 }
 
-/* SUBMENU MOBILE */
-.menu-content .nav-page .nav-submenu {
+.menu-content .nav-page[data-has-submenu] .toggle-icon:hover {
+    background-color: #F2F2F2;
+}
+
+.menu-content .nav-page:not([data-has-submenu]) .toggle-icon {
+    display: none;
+}
+
+/* arrow */
+
+.menu-content .toggle-icon img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.menu-content .nav-page.open .toggle-icon img {
+    transform: rotate(-90deg);
+}
+
+/* =========================
+   MOBILE SUBMENU
+========================= */
+
+.menu-content .nav-submenu {
     display: none;
     flex-direction: column;
-    padding-left: 24px; /* увеличенный отступ */
-    gap: 0;
+    padding-left: 24px;
 }
 
-.menu-content .nav-page.open .nav-submenu {
+.menu-content .nav-page.open > .nav-submenu {
     display: flex;
 }
 
-.menu-content .nav-page .nav-submenu .nav-link {
+.menu-content .nav-submenu .nav-link {
     padding: 8px 24px;
+    border-radius: 12px;
 }
 
-/* BUTTON */
+.menu-content .nav-submenu .nav-link:hover {
+    background-color: #F2F2F2;
+}
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
 .menu-content .button-white {
-    display: block;
     width: 100%;
-    text-align: left;
     padding: 12px 24px;
-    box-sizing: border-box;
-    background-color: transparent;
-    border: none;
+    background: transparent;
     border-radius: 12px;
+    text-align: left;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 .menu-content .button-white:hover {
@@ -210,8 +308,9 @@ body.menu-open {
 }
 
 /* =========================
-   MEDIA QUERIES
-   ========================= */
+   MEDIA
+========================= */
+
 @media (max-width: 1024px) {
     .logo-text {
         font-size: 14px;
@@ -222,4 +321,14 @@ body.menu-open {
     .top-bar-center {
         display: none;
     }
+}
+
+/* =========================
+   REMOVE UNDERLINES
+========================= */
+
+.top-bar a,
+.menu-content a {
+    text-decoration: none;
+    border-bottom: none;
 }
