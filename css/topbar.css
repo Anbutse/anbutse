@@ -1,17 +1,8 @@
-/* =========================
-   RESET / BASE
-========================= */
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
-
-/* =========================
-   TOP BAR (DESKTOP)
-========================= */
-
 .top-bar {
     position: fixed;
     inset: 0 0 auto 0;
@@ -19,7 +10,6 @@
     background-color: #FFFFFF;
     z-index: 999;
 }
-
 .top-bar .container {
     height: 100%;
     display: grid;
@@ -27,7 +17,6 @@
     align-items: center;
     padding: 0 20px;
 }
-
 .top-bar-left {
     display: flex;
     align-items: center;
@@ -35,74 +24,50 @@
     text-decoration: none;
     color: inherit;
 }
-
 .top-bar-left svg {
     width: 28px;
     height: 28px;
     flex-shrink: 0;
 }
-
-/* =========================
-   DESKTOP NAV
-========================= */
-
 .top-bar-center {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 16px;
 }
-
 .top-bar-center .nav-page {
     position: relative;
     display: flex;
     align-items: center;
     border-radius: 12px;
 }
-
-/* clickable title */
-
 .top-bar-center .nav-page > .nav-link {
     padding: 6px 12px;
     border-radius: 12px;
     white-space: nowrap;
     position: relative;
 }
-
 .top-bar-center .nav-page > .nav-link:hover {
     background-color: #F2F2F2;
 }
-
-/* =========================
-   DESKTOP DROPDOWN (FIXED)
-========================= */
-
 .top-bar-center .nav-submenu {
     position: absolute;
     top: calc(100% + 8px);
     left: 0;
     min-width: 200px;
-
     background: #FFFFFF;
     border-radius: 12px;
     padding: 12px;
-
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-
     display: flex;
     flex-direction: column;
-
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-
     transition:
         opacity 0.2s ease,
         visibility 0s linear 0.2s;
 }
-
-/* invisible hover bridge */
-
 .top-bar-center .nav-page::after {
     content: "";
     position: absolute;
@@ -111,47 +76,28 @@
     top: 100%;
     height: 14px;
 }
-
-/* show submenu */
-
 .top-bar-center .nav-page:hover > .nav-submenu,
 .top-bar-center .nav-submenu:hover {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-
     transition-delay: 0s;
 }
-
-/* submenu links */
-
 .top-bar-center .nav-submenu .nav-link {
     padding: 8px 16px;
     border-radius: 8px;
 }
-
 .top-bar-center .nav-submenu .nav-link:hover {
     background-color: #F2F2F2;
 }
-
-/* =========================
-   RIGHT SIDE
-========================= */
-
 .top-bar-right {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-
-/* =========================
-   MOBILE MENU OVERLAY
-========================= */
-
 body.menu-open {
     overflow: hidden;
 }
-
 .menu-overlay {
     position: fixed;
     inset: 0;
@@ -162,12 +108,10 @@ body.menu-open {
     transition: opacity 0.25s ease;
     z-index: 998;
 }
-
 .menu-overlay.active {
     opacity: 1;
     pointer-events: auto;
 }
-
 .menu-panel {
     margin-top: 64px;
     background: #FFFFFF;
@@ -178,16 +122,10 @@ body.menu-open {
     opacity: 0;
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
-
 .menu-overlay.active .menu-panel {
     transform: scale(1);
     opacity: 1;
 }
-
-/* =========================
-   MOBILE NAV CONTENT
-========================= */
-
 .menu-content {
     display: flex;
     flex-direction: column;
@@ -196,18 +134,10 @@ body.menu-open {
     background: #FAFAFA;
     border-radius: 16px;
 }
-
-/* =========================
-   MOBILE NAV PAGE
-========================= */
-
 .menu-content .nav-page {
     display: flex;
     flex-direction: column;
 }
-
-/* header */
-
 .menu-content .nav-page-header {
     display: flex;
     align-items: center;
@@ -215,9 +145,6 @@ body.menu-open {
     height: 36px;
     border-radius: 12px;
 }
-
-/* title */
-
 .menu-content .nav-page-header .nav-link {
     flex: 1;
     height: 100%;
@@ -226,13 +153,9 @@ body.menu-open {
     padding: 0 12px 0 24px;
     border-radius: 12px;
 }
-
 .menu-content .nav-page-header .nav-link:hover {
     background-color: #F2F2F2;
 }
-
-/* toggle */
-
 .menu-content .nav-page[data-has-submenu] .toggle-icon {
     width: 36px;
     height: 36px;
@@ -243,89 +166,59 @@ body.menu-open {
     display: flex;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
 }
-
 .menu-content .nav-page[data-has-submenu] .toggle-icon:hover {
     background-color: #F2F2F2;
 }
-
 .menu-content .nav-page:not([data-has-submenu]) .toggle-icon {
     display: none;
 }
-
-/* arrow */
-
 .menu-content .toggle-icon img {
     width: 16px;
     height: 16px;
     transition: transform 0.2s ease;
 }
-
 .menu-content .nav-page.open .toggle-icon img {
     transform: rotate(-90deg);
 }
-
-/* =========================
-   MOBILE SUBMENU
-========================= */
-
 .menu-content .nav-submenu {
     display: none;
     flex-direction: column;
     padding-left: 24px;
 }
-
 .menu-content .nav-page.open > .nav-submenu {
     display: flex;
 }
-
 .menu-content .nav-submenu .nav-link {
     padding: 8px 24px;
     border-radius: 12px;
 }
-
 .menu-content .nav-submenu .nav-link:hover {
     background-color: #F2F2F2;
 }
-
-/* =========================
-   MOBILE BUTTON
-========================= */
-
 .menu-content .button-white {
     width: 100%;
     padding: 12px 24px;
-    background: transparent;
+    background: #000000;
     border-radius: 12px;
     text-align: left;
     cursor: pointer;
 }
-
 .menu-content .button-white:hover {
     background-color: #F2F2F2;
 }
-
-/* =========================
-   MEDIA
-========================= */
 
 @media (max-width: 1024px) {
     .logo-text {
         font-size: 14px;
     }
 }
-
 @media (max-width: 768px) {
     .top-bar-center {
         display: none;
     }
 }
-
-/* =========================
-   REMOVE UNDERLINES
-========================= */
 
 .top-bar a,
 .menu-content a {
