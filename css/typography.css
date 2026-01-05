@@ -23,66 +23,63 @@
   font-display: swap;
 }
 
-/* TitleSemiBold — 54px (desktop), line-height 1 */
+/* Title SemiBold — 54px*/
 .title-semi-bold {
   font-family: 'Vela Sans', sans-serif;
   font-weight: 600;
   font-size: clamp(32px, 6vw, 54px); /* адаптивный размер */
   line-height: 1;
-  color: #161618;
+  color: #000000;
 }
-
-/* SemiBold — 36px, line-height 1.2 */
+/* SemiBold — 36px */
 .semi-bold {
   font-family: 'Vela Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(24px, 5vw, 36px);
   line-height: 1.2;
-  color: #161618;
+  color: #000000;
 }
-
-/* Headline Medium — 24px, line-height 1.2 */
+/* Headline Medium — 24px */
 .headline-medium {
   font-family: 'Vela Sans', sans-serif;
   font-weight: 500;
   font-size: clamp(18px, 4vw, 24px);
   line-height: 1.2;
-  color: #161618;
+  color: #141414;
 }
-
-/* PreHeadline Medium — 18px, line-height 1.4 */
+/* PreHeadline Medium — 18px */
 .preheadline-medium {
   font-family: 'Vela Sans', sans-serif;
   font-weight: 500;
   font-size: clamp(14px, 3.5vw, 18px);
   line-height: 1.4;
-  color: #161618;
+  color: #141414;
 }
-
-/* Text Regular — 14px, line-height 1.4 */
+/* Text Regular — 14px */
 .text-regular {
   font-family: 'Vela Sans', sans-serif;
   font-weight: 400;
-  font-size: clamp(12px, 2.5vw, 14px);
+  font-size: 14px;
   line-height: 1.4;
-  color: #161618;
+  color: #1F1F1F;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-/* Text Caption — 10px, line-height 1.4 */
+/* Text Caption — 10px */
 .text-caption {
   font-family: 'Vela Sans', sans-serif;
   font-weight: 400;
   font-size: clamp(8px, 1.5vw, 10px);
   line-height: 1.4;
-  color: #555555;
+  color: #666666;
 }
-
 .logo-text {
   font-family: 'Vela Sans', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.4;
-  color: #141414;
+  color: #000000;
   white-space: nowrap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -92,7 +89,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.4;
-  color: #141414;
+  color: #000000;
   white-space: nowrap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
