@@ -19,45 +19,30 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     hamburger.addEventListener('click', () => {
-        const isOpen = overlay.classList.contains('active');
-        isOpen ? closeMenu() : openMenu();
+        overlay.classList.contains('active') ? closeMenu() : openMenu();
     });
 
-    /* Закрытие при клике по кнопкам и ссылкам */
-    overlay.querySelectorAll('.menu-content .button-white').forEach(el => {
-        el.addEventListener('click', closeMenu);
+    /* закрытие по кнопке */
+    overlay.querySelectorAll('.button-white').forEach(btn => {
+        btn.addEventListener('click', closeMenu);
     });
 
-    /* Закрытие по Esc */
+    /* ESC */
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeMenu();
     });
 
-    /* Раскрытие подразделов в мобильном меню */
-    const navPages = overlay.querySelectorAll('.menu-content .nav-page');
+    /* mobile submenu */
+    overlay.querySelectorAll('.nav-page[data-has-submenu]').forEach(page => {
+        const toggle = page.querySelector('.toggle-icon');
 
-    navPages.forEach(page => {
-        const link = page.querySelector('.nav-link');
-        const toggleIcon = link.querySelector('.toggle-icon');
-        const submenu = page.querySelector('.nav-submenu');
+        if (!toggle) return;
 
-        // обработка клика по стрелке
-        toggleIcon.addEventListener('click', e => {
-            e.stopPropagation(); // чтобы не срабатывал клик по ссылке страницы
-            const isOpen = page.classList.contains('open');
-            page.classList.toggle('open', !isOpen);
-            toggleIcon.textContent = isOpen ? '∨' : '>';
-        });
+        toggle.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
 
-        // клик по названию страницы (сам текст ссылки)
-        link.addEventListener('click', e => {
-            const target = e.target;
-            if (target !== toggleIcon) {
-                // при клике на текст ссылки переходим на страницу
-                const href = link.getAttribute('href');
-                if (href && href !== '#') window.location.href = href;
-                closeMenu();
-            }
+            page.classList.toggle('open');
         });
     });
 });
