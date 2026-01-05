@@ -3,11 +3,8 @@ html, body {
     padding: 0;
     background-color: #141414;
 }
-
-/* HERO */
-
 .hero {
-    position: relative;              /* необходимо для фонового canvas */
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,10 +15,8 @@ html, body {
     background-color: #FFFFFF;
     box-sizing: border-box;
     border-radius: 0 0 20px 20px;
-    overflow: hidden;                /* обрезает WebGL по форме hero */
+    overflow: hidden;
 }
-
-/* Видео на фоне */
 #hero-video {
     position: absolute;
     top: 50%;
@@ -33,15 +28,10 @@ html, body {
     z-index: 0;
     pointer-events: none;
 }
-
-/* Все элементы hero поверх 3D */
 .hero > *:not(#hero-video):not(.hero-glass) {
     position: relative;
     z-index: 2;
 }
-
-/* IMAGE */
-
 .hero-image img {
     width: 200px;
     max-width: 50%;
@@ -49,36 +39,25 @@ html, body {
     border-radius: 16px;
     margin-bottom: 24px;
 }
-
-/* TITLE */
-
 .hero-title {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 24px;
     line-height: 1.2;
 }
-
-/* SOCIALS */
-
 .hero-socials {
     display: flex;
-    gap: 20px;
+    gap: 32px;
     flex-wrap: wrap;
 }
-
 .social-link {
     text-decoration: none;
-    color: #141414;
-    font-weight: 500;
+    font-weight: 400;
     transition: color 0.2s ease;
 }
-
 .social-link:hover {
     color: #7A7D80;
 }
-
-/* Полупрозрачный слой матового стекла */
 .hero-glass {
     position: absolute;
     inset: 0;                    /* растянуть на всю секцию */
@@ -89,14 +68,11 @@ html, body {
     pointer-events: none;       /* клики проходят сквозь слой */
 }
 
-/* RESPONSIVE */
-
 @media (max-width: 1024px) {
     .hero-title {
         font-size: 2rem;
     }
 }
-
 @media (max-width: 768px) {
     .hero-title {
         font-size: 1.5rem;
@@ -107,7 +83,6 @@ html, body {
     }
 
     .hero-socials {
-        gap: 12px;
+        gap: 16px;
     }
 }
-
