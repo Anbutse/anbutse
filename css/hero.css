@@ -1,8 +1,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #141414;
+    background-color: #F2F2F2;
 }
+
 .hero {
     position: relative;
     display: flex;
@@ -14,9 +15,10 @@ html, body {
     text-align: center;
     background-color: #FFFFFF;
     box-sizing: border-box;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 32px 32px;
     overflow: hidden;
 }
+
 #hero-video {
     position: absolute;
     top: 50%;
@@ -28,10 +30,12 @@ html, body {
     z-index: 0;
     pointer-events: none;
 }
+
 .hero > *:not(#hero-video):not(.hero-glass) {
     position: relative;
     z-index: 2;
 }
+
 .hero-image img {
     width: 200px;
     max-width: 50%;
@@ -39,42 +43,73 @@ html, body {
     border-radius: 16px;
     margin-bottom: 24px;
 }
-.hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 24px;
+
+/* Заголовок */
+#hero-title {
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
     line-height: 1.2;
 }
+
+.hero-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.6em);
+    animation: heroCharIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    vertical-align: bottom;
+}
+
+@keyframes heroCharIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Социальные ссылки с анимацией появления */
 .hero-socials {
     display: flex;
     gap: 32px;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 24px;
 }
+
 .social-link {
     text-decoration: none;
     font-weight: 400;
-    transition: color 0.2s ease;
+    opacity: 0;
+    transform: translateY(0.5em);
+    animation: socialFadeIn 0.6s ease forwards;
+    animation-delay: 1.5s; /* появляется после заголовка */
 }
-.social-link:hover {
-    color: #7A7D80;
+
+@keyframes socialFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 .hero-glass {
     position: absolute;
-    inset: 0;                    /* растянуть на всю секцию */
-    background: rgba(255, 255, 255, 0);  /* прозрачность */
-    backdrop-filter: blur(3px);           /* размытие */
+    inset: 0;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    z-index: 1;                 /* ниже текста и фото, выше canvas */
-    pointer-events: none;       /* клики проходят сквозь слой */
+    z-index: 1;
+    pointer-events: none;
 }
 
 @media (max-width: 1024px) {
-    .hero-title {
+    #hero-title {
         font-size: 2rem;
     }
 }
+
 @media (max-width: 768px) {
-    .hero-title {
+    #hero-title {
         font-size: 1.5rem;
     }
 
@@ -83,6 +118,63 @@ html, body {
     }
 
     .hero-socials {
-        gap: 16px;
+        gap: 24px;
     }
+}
+
+.hero-transition {
+    position: relative;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+}
+
+.scroll-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: transparent;
+}
+
+.scroll-down .toggle-icon {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.scroll-down .toggle-icon:hover {
+    background-color: #EBEBEB;
+}
+
+.scroll-down .toggle-icon img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+.hero-image img,
+.hero-socials .social-link {
+  opacity: 0;
+  transform: translateY(0.8em);
+  animation: fadeInUp 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
