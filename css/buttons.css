@@ -1,8 +1,9 @@
 .button-white {
      display: inline-flex;
      width: auto;
-     height: auto;
+     height: 36px;
      padding: 6px 12px;
+     align-items: center;
      margin: 0;
      border: none;
      border-radius: 12px;
