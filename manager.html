@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструменты менеджера, аналитика бизнеса</title>
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/topbar.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="container">
+            <a href="/" class="top-bar-left" aria-label="На главную страницу">
+                <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+                    <rect width="28" height="28" rx="8" fill="#141414"/>
+                    <path d="M15.3125 14.875L19.25 16.8437V18.5937L14.6949 16.3162L12.6875 21H10.9375L13.2708 15.5556L15.3125 14.875Z" fill="#7A7D80"/>
+                    <path d="M13.2708 15.5556L15.3125 14.875L14.6949 16.3162L12.6875 21H10.9375L13.2708 15.5556Z" fill="#FFFDFA"/>
+                    <path d="M8.75 7H7L10.5 15.1667L19.25 12.25V21H21V9.91667L11.375 13.125L8.75 7Z" fill="#FFFDFA"/>
+                </svg>
+                <span class="logo-text">Анбуце Владислав</span>
+            </a>
+            <nav class="top-bar-center" aria-label="Основная навигация">
+                <div class="nav-page">
+                    <a href="/" class="nav-link text-button">Дизайн</a>
+                    <div class="nav-submenu">
+                        <a href="#about" class="nav-link text-button">Обо мне</a>
+                        <a href="#projects" class="nav-link text-button">Проекты</a>
+                        <a href="#services" class="nav-link text-button">Услуги</a>
+                        <a href="#stages" class="nav-link text-button">Этапы работы</a>
+                        <a href="#contact" class="nav-link text-button">Контакты</a>
+                    </div>
+                </div>
+                <div class="nav-page">
+                    <a href="manager.html" class="nav-link text-button">Менеджмент</a>
+                    <div class="nav-submenu">
+                        <a href="#education" class="nav-link text-button">Образование</a>
+                        <a href="#projects" class="nav-link text-button">Проекты</a>
+                        <a href="#tools" class="nav-link text-button">Инструменты</a>
+                    </div>
+                </div>
+                <div class="nav-page">
+                    <a href="documents.html" class="nav-link text-button">Документы</a>
+                </div>
+                <div class="nav-page">
+                    <a href="glossary.html" class="nav-link text-button">Глоссарий</a>
+                </div>
+            </nav>
+            <div class="top-bar-right">
+                <button class="hamburger text-button" aria-label="Открыть меню" aria-expanded="false">Меню</button>
+                <a
+                 href="https://t.me/vlad_anbutse"
+                 class="button-white text-button discuss-project"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                >
+                 Связаться в Telegram
+                </a>
+            </div>
+        </div>
+    </header>
+    <aside class="menu-overlay" aria-hidden="true">
+        <div class="menu-panel">
+            <nav class="menu-content" aria-label="Мобильная навигация">
+                <div class="nav-page" data-has-submenu>
+                    <div class="nav-page-header">
+                        <a href="/" class="nav-link text-button">Дизайн</a>
+                        <button class="toggle-icon" type="button" aria-label="Показать разделы">
+                            <img src="svg/arrow-down-black.svg" alt="" />
+                        </button>
+                    </div>
+                    <div class="nav-submenu">
+                        <a href="#about" class="nav-link text-button">Обо мне</a>
+                        <a href="#projects" class="nav-link text-button">Проекты</a>
+                        <a href="#services" class="nav-link text-button">Услуги</a>
+                        <a href="#stages" class="nav-link text-button">Этапы работы</a>
+                        <a href="#contact" class="nav-link text-button">Контакты</a>
+                    </div>
+                </div>
+                <div class="nav-page" data-has-submenu>
+                    <div class="nav-page-header">
+                        <a href="manager.html" class="nav-link text-button">Менеджмент</a>
+                        <button class="toggle-icon" type="button" aria-label="Показать разделы">
+                            <img src="svg/arrow-down-black.svg" alt="" />
+                        </button>
+                    </div>
+                    <div class="nav-submenu">
+                        <a href="#education" class="nav-link text-button">Образование</a>
+                        <a href="#projects" class="nav-link text-button">Проекты</a>
+                        <a href="#tools" class="nav-link text-button">Инструменты</a>
+                    </div>
+                </div>
+                <div class="nav-page">
+                    <div class="nav-page-header">
+                        <a href="documents.html" class="nav-link text-button">Документы</a>
+                        <button class="toggle-icon" type="button" aria-label="Нет разделов"></button>
+                    </div>
+                </div>
+                <div class="nav-page">
+                    <div class="nav-page-header">
+                        <a href="glossary.html" class="nav-link text-button">Глоссарий</a>
+                        <button class="toggle-icon" type="button" aria-label="Нет разделов"></button>
+                    </div>
+                </div>
+                <a
+                 href="https://t.me/vlad_anbutse"
+                 class="button-white text-button discuss-project"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                >
+                 Связаться в Telegram
+                </a>
+            </nav>
+        </div>
+    </aside>
+    <main>
+        <section id="education"></section>
+        <section id="projects"></section>
+        <section id="tools"></section>
+    </main>
+</body>
+</html>
